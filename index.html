@@ -1,0 +1,996 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style type="text/css">
+        @font-face {
+            font-family: 'IQOS Sans';
+            font-style: normal;
+            font-weight: 400;
+            src: local('IQOS Sans Regular');
+            src: url('https://www.iqos.com/vanity/apps/pmisite/clientlibs/static/nbw_iqoshtml.css/fonts/IQOSFont/IQOSW04-Regular.woff2') format('woff2');
+        }
+
+        @font-face {
+            font-family: 'IQOS Sans';
+            font-style: normal;
+            font-weight: 700;
+            src: local('IQOS Sans Bold');
+            src: url('https://www.iqos.com/vanity/apps/pmisite/clientlibs/static/nbw_iqoshtml.css/fonts/IQOSFont/IQOSW04-Bold.woff2') format('woff2');
+        }
+
+        div[style*="margin: 16px 0"] {
+            margin: 0 !important;
+        }
+
+        html {
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #fbfaf8;
+            color: #3F4053;
+        }
+
+        *[class].btn-1 {
+            border-radius: 25px;
+            padding: 10px 20px;
+            background-color: #44546a;
+            color: #ffffff;
+            display: inline-block;
+            font-size: 15px;
+            line-height: 1.5;
+            font-family: 'IQOS Sans', 'Inter', Arial, sans-serif;
+            font-style: normal;
+            text-align: center;
+            font-weight: 400;
+            text-decoration: none;
+            min-width: 190px;
+            -webkit-text-size-adjust: none;
+        }
+
+        .ReadMsgBody {
+            width: 100%;
+        }
+
+        body,
+        table,
+        span,
+        div {
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+
+        table {
+            border-spacing: 0;
+            font-family: IQOS Sans, Inter, Arial, sans-serif;
+            color: #5a5a5a;
+        }
+
+        td {
+            padding: 0;
+        }
+
+        img {
+            border: 0;
+        }
+
+        *[class="trackingpixel"] {
+            display: none !important;
+        }
+
+        .appleLink a,
+        .appleLink {
+            color: #323232 !important;
+            text-decoration: none !important;
+        }
+
+        .appleLinkGrey a,
+        .appleLinkGrey {
+            color: #35303e !important;
+            text-decoration: none !important;
+        }
+
+        .wrapper {
+            width: 100%;
+            table-layout: fixed;
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+
+        .webkit {
+            max-width: 480px;
+        }
+
+        .outer {
+            Margin: 0 auto;
+            width: 100%;
+            max-width: 480px;
+        }
+
+        .contents {
+            width: 100%;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .owaContextualHighlight span {
+            border: none !important;
+            color: inherit !important;
+        }
+
+        [data-outlook-cycle] [x-apple-data-detectors-type="calendar-event"] {
+            color: inherit !important;
+            -webkit-text-decoration-color: inherit !important;
+            text-decoration-color: inherit !important;
+            text-decoration: none !important;
+        }
+
+        @media only screen and (max-width: 600px) {
+            .desktop {
+                display: none !important;
+            }
+
+            .mobile {
+                display: block !important;
+                overflow: visible !important;
+                visibility: visible !important;
+                max-height: none !important;
+            }
+
+            .headline-17 {
+                min-height: 0vw !important;
+                font-size: calc(11px + 1vw) !important;
+                line-height: calc(21px + 1vw) !important;
+            }
+
+            .headline-24 {
+                min-height: 0vw !important;
+                font-size: calc(18px + 1vw) !important;
+                line-height: calc(28px + 1vw) !important;
+            }
+
+            .headline-40 {
+                min-height: 0vw !important;
+                font-size: calc(36px + 1vw) !important;
+                line-height: calc(44px + 1vw) !important;
+            }
+
+            .copytext-15 {
+                min-height: 0vw !important;
+                font-size: calc(10px + 1vw) !important;
+                line-height: calc(18px + 1vw) !important;
+            }
+
+            .copytext-13 {
+                min-height: 0vw !important;
+                font-size: calc(9px + 1vw) !important;
+                line-height: calc(14px + 1vw) !important;
+            }
+
+            img {
+                max-width: 100%;
+                height: auto;
+                max-height: auto !important;
+            }
+
+            .footnote-12 {
+                min-height: 0vw !important;
+                font-size: calc(8px + 1vw) !important;
+                line-height: calc(14px + 1vw) !important;
+            }
+
+            .footnote-10 {
+                min-height: 0vw !important;
+                font-size: calc(6px + 1vw) !important;
+                line-height: calc(12px + 1vw) !important;
+            }
+
+            .footerlinks-14 {
+                min-height: 0vw !important;
+                font-size: calc(9px + 1vw) !important;
+                line-height: calc(17px + 1vw) !important;
+            }
+
+            .p-l-r,
+            .p-l-r {
+                padding: 0 15px 0 15px;
+            }
+
+            .p-l-r25,
+            .p-l-r25 {
+                padding: 0 25px 0 25px;
+            }
+
+            .p-l-r5,
+            .p-l-r5 {
+                padding: 0 5px 0 0px;
+            }
+
+            .p-l-r10,
+            .p-l-r10 {
+                padding: 0 10px 0 0px;
+            }
+
+            .hidden,
+            .hidden {
+                display: none;
+            }
+
+            .responsive-img {
+                width: 100% !important;
+                height: auto !important;
+            }
+
+            .mobile-text-right p {
+                text-align: right !important;
+            }
+
+            .two-column.products .column {
+                max-width: 100% !important;
+            }
+
+            *[class].block,
+            .block {
+                width: 100% !important;
+                text-align: center !important;
+                display: block !important;
+                margin: 0 auto !important;
+            }
+
+            *[class].blocking,
+            .blocking {
+                width: 100% !important;
+                display: block !important;
+                margin: 0 auto !important;
+            }
+
+            *[class].txt-center,
+            .txt-center {
+                text-align: center !important;
+            }
+
+            .two-column.stack .column {
+                max-width: 100% !important;
+            }
+
+            *[class].flexible-content,
+            .flexible-content {
+                width: 100% !important;
+            }
+
+            *[class].block-txt,
+            .block-txt {
+                text-align: center !important;
+                display: block !important;
+                margin: 0 auto !important;
+            }
+
+            *[class].txt-center td,
+            .txt-center td {
+                text-align: center !important;
+            }
+
+            *[class].txt-center td table,
+            .txt-center td table {
+                text-align: center !important;
+                margin: 0 auto;
+            }
+
+            *[class].h62,
+            .h62 {
+                height: 62px !important;
+            }
+
+            *[class].fs9,
+            .fs9 {
+                font-size: 9px !important;
+                font-weight: bold;
+            }
+
+            *[class].fs11,
+            .fs11 {
+                font-size: 11px !important;
+                font-weight: 400;
+            }
+
+            *[class].fs18,
+            .fs18 {
+                font-size: 18px !important;
+                font-weight: bold;
+            }
+
+            *[class].fs22,
+            .fs22 {
+                font-size: 22px !important;
+                font-weight: bold;
+            }
+
+            *[class].fs15,
+            .fs15 {
+                font-size: 15px !important;
+                font-weight: normal;
+            }
+
+            *[class].fs45,
+            .fs45 {
+                font-size: 45px !important;
+                font-weight: normal;
+            }
+
+            *[class].fs9,
+            .fs9 {
+                font-size: 9px !important;
+                font-weight: normal;
+            }
+
+            *[class].height30,
+            .height30 {
+                height: 30px;
+            }
+
+            *[class].height10,
+            .height10 {
+                height: 10px;
+            }
+
+            *[class].paddingleft0,
+            .paddingleft0 {
+                padding-left: 0px !important;
+            }
+
+            *[class].paddingright0,
+            .paddingright0 {
+                padding-right: 0px !important;
+            }
+
+            *[class].paddingtop0,
+            .paddingtop0 {
+                padding-top: 0px !important;
+            }
+
+            *[class].btn {
+                font-size: 12px !important;
+            }
+        }
+
+        img+div {
+            display: none;
+        }
+
+        div+a,
+        div+span+a {
+            -webkit-transition: all 0.3s ease-out;
+            transition: all 0.3s ease-out;
+        }
+    </style>
+
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" max-width="600">
+        <tr>
+            <td align="center" width="600" style="background-color: #fffdfb;" valign="top">
+                <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" width="100%">
+                    <tr>
+                        <td align="center" valign="top">
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center"
+                                width="100%">
+                                <tr>
+                                    <td align="center" valign="top">
+                                        <p class="fs9" style="font-size: 12px; padding-top: 20px; margin: 0;">If you are
+                                            not able to
+                                            view this email correctly,
+                                            please <span style="text-decoration: underline;">click here</span></p>
+                                    </td>
+                                </tr>
+
+                                <td align="center" valign="top">
+                                    <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center"
+                                        width="100%">
+                                        <tr>
+                                            <td align="left" valign="top" style="padding: 15px 20px 30px;">
+                                                <img width="119" height="39"
+                                                    src="https://image.e.iqos.com/lib/fe3c11717564047c741679/m/1/39cf90b2-482f-4f80-bba2-6d1f8043d2d3.png"
+                                                    style="display: block;">
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+
+                            </table>
+                    <tr>
+                        <td align="center" valign="top">
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center"
+                                width="100%">
+                                <tr>
+                                    <td align="right" valign="top">
+                                        <img width="160" height="43"
+                                            src="https://image.e.iqos.com/lib/fe3c11717564047c741679/m/1/cbd8d259-0180-49dc-9200-c6ad003411da.png"
+                                            style="display: block;">
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+            </td>
+        </tr>
+
+        <tr>
+            <td align="center" valign="top">
+                <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" width="100%">
+                    <tr>
+                        <td align="center" valign="top">
+                            <img width="600" height="auto"
+                                src="https://image.e.iqos.com/lib/fe3c11717564047c741679/m/1/2bf11a00-7b47-4c3f-8ce8-65cac5c9ecd4.gif"
+                                style="display: block; padding-top: 5px;">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center" valign="top">
+                            <h1
+                                style="font-size: 22px; font-family: Arial, Helvetica, sans-serif; color: #35303e; margin: 0; padding-top: 30px;">
+                                Unleash the <span style="color: #6e07b8;" class="fs18">energy of colour </span></h1>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td align="center" valign="top">
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center"
+                                width="100%">
+                                <tr>
+                                    <td width="60" class="p-l-r"></td>
+                                    <td align="center" valign="top" width="480">
+                                        <p
+                                            style="font-size: 16px; font-family: Arial, Helvetica, sans-serif; margin: 0; padding-top: 20px;">
+                                            Hello %%=Propercase(@FirstName)=%%,</p>
+                                        <p
+                                            style="font-size: 16px; font-family: Arial, Helvetica, sans-serif; margin: 0; padding-top: 20px;">
+                                            Ready to be among the first ones to stand out?</p>
+                                        <p
+                                            style="font-size: 16px; font-family: Arial, Helvetica, sans-serif; margin: 0; padding-top: 20px;">
+                                            The new IQOS ILUMA Limited Edition NEON purple inspired by the energy of
+                                            colour has just
+                                            landed in the Kingdom!</p>
+
+                                    </td>
+                                    <td width="60" class="p-l-r"></td>
+                                </tr>
+                            </table>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td height="30"></td>
+                    </tr>
+                    <tr>
+                        <td align="center" valign="top" class="p-l-r">
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center"
+                                width="100%">
+                                <tr>
+                                    <td width="95"></td>
+                                    <td align="center" valign="top" width="200">
+                                        <a href="#"><span
+                                                style="background-color: #35303e; color: white; padding: 10px 5px; border-radius: 25px; font-size: 15px; display: inline-block; width: 160px;">Shop
+                                                Online</span></a>
+                                    </td>
+                                    <td width="10" class="p-l-r5"></td>
+                                    <td align="center" valign="top" width="200">
+                                        <a href="#"><span
+                                                style="background-color: #35303e; color: white; padding: 10px 5px; border-radius: 25px; font-size: 15px; width: 160px; display: inline-block;">Find
+                                                a store</span></a>
+                                    </td>
+                                    <td width="95"></td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td height="50"></td>
+                    </tr>
+
+
+                    <tr>
+                        <td align="center" valign="top" style=" text-align: center; direction: rtl;">
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center"
+                                width="100%">
+                                <tr>
+                                    <td style="padding-left: 15px;" class="paddingleft0" align="center">
+                                        <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                                            <tr>
+                                                <td align="center" valign="top"></td>
+                                                <td valign="top" class="block ">
+                                                    <img width="300" height="auto"
+                                                        style="margin: 0 auto; display: block; "
+                                                        src="https://image.e.iqos.com/lib/fe3c11717564047c741679/m/1/ae63bc07-eb65-44d0-a88f-56552332f380.png"
+                                                        alt="">
+                                                </td>
+
+                                                <td width="300" valign="middle" class="blocking" align="center">
+                                                    <table role="presentation" cellpadding="0" cellspacing="0"
+                                                        border="0">
+                                                        <tr>
+                                                            <td align="center" valign="middle"
+                                                                style="text-align: center;">
+                                                                <img width="259" style=" margin: 0; max-width: 259px;"
+                                                                    class="block"
+                                                                    src="https://image.e.iqos.com/lib/fe3c11717564047c741679/m/1/d6a111a9-cd4c-4f56-ad07-45933380212b.png">
+                                                                <p style="margin: 0 auto; font-size: 16px; padding-top: 5px;"
+                                                                    class="txt-center fs15">LIMITED
+                                                                    EDITION NEON
+                                                                    PURPLE</p>
+                                                            </td>
+                                                        </tr>
+                                                        <td height="44" class="hidden"></td>
+                                                        <tr>
+                                                            <td align="center" valign="top"
+                                                                style="text-align: center; direction: ltr;">
+                                                                <h1 style="margin: 0 auto; font-size: 60px; font-weight: 700; color:#C21186; text-align: center; font-family: Arial, Helvetica, sans-serif;"
+                                                                    class="fs45">480<sup
+                                                                        style="font-size: 25px;">SAR*</sup>
+                                                                </h1>
+                                                            </td>
+                                                        <tr>
+                                                            <td height="20" align="center" valign="middle"></td>
+                                                        </tr>
+                                                        <td align="center" valign="top" style="text-align: center;">
+                                                            <a href="#"><span
+                                                                    style="background-color: #35303e; color: white; padding: 10px 20px; border-radius: 25px; display: inline-block; font-size: 15px; font-weight: 700; min-width: 110px; border: 1px solid #35303e;">Buy
+                                                                    now</span></a>
+                                                        </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                        </td>
+                    </tr>
+
+
+
+
+                </table>
+            </td>
+        </tr>
+
+
+
+        <tr>
+            <td height="50"></td>
+        </tr>
+
+        <tr>
+            <td align="center" valign="top" style=" text-align: center; direction: ltr;">
+                <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" width="100%">
+                    <tr>
+                        <td align="center">
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                                <tr>
+                                    <td align="center" valign="top">
+                                    </td>
+                                    <td valign="top" class="block ">
+                                        <img width="300" height="auto" style="margin: 0 auto; display: block; "
+                                            src="https://image.e.iqos.com/lib/fe3c11717564047c741679/m/1/5ee7ca6d-b46c-499b-9c34-e586e7a6569f.png"
+                                            alt="">
+                                    </td>
+
+                                    <td width="300" valign="middle" class="blocking" align="center">
+                                        <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                                            <tr>
+                                                <td align="center" valign="middle" style="text-align: center;">
+                                                    <img width="175" style=" margin: 0; max-width: 175px;" class="block"
+                                                        src="https://image.e.iqos.com/lib/fe3c11717564047c741679/m/1/d327a86c-7ff1-4acb-97e4-4e336fbe86cc.png">
+                                                    <p style="margin: 0 auto; font-size: 16px; padding-top: 5px;"
+                                                        class="txt-center fs15">LIMITED
+                                                        EDITION NEON
+                                                        PURPLE</p>
+                                                </td>
+                                            </tr>
+                                            <td height="44" class="hidden"></td>
+                                            <tr>
+                                                <td align="center" valign="top" style="text-align: center;">
+                                                    <h1 style="margin: 0 auto; font-size: 60px; font-weight: 700; color:#C21186; text-align: center; font-family: Arial, Helvetica, sans-serif;"
+                                                        class="fs45">310<sup style="font-size: 25px; "
+                                                            class="fs22">SAR*</sup>
+                                                    </h1>
+                                                </td>
+                                            <tr>
+                                                <td height="20" align="center" valign="middle"></td>
+                                            </tr>
+                                            <td align="center" valign="top" style="text-align: center;">
+                                                <a href="#"><span
+                                                        style="background-color: #35303e; color: white; padding: 10px 20px; border-radius: 25px; display: inline-block; font-size: 15px; font-weight: 700; min-width: 110px; border: 1px solid #35303e;">Buy
+                                                        now</span></a>
+                                            </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+            </td>
+        </tr>
+    </table>
+    </td>
+    </tr>
+
+
+
+
+
+    <tr>
+        <td height="50"></td>
+    </tr>
+
+
+    <tr>
+        <td align="center" valign="top" style=" text-align: center; direction: rtl;">
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" width="100%">
+                <tr>
+                    <td align="center">
+                        <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                            <tr>
+                                <td align="center" valign="top"></td>
+                                <td valign="top" class="block ">
+                                    <img width="300" height="auto" style="margin: 0 auto; display: block; "
+                                        src="https://image.e.iqos.com/lib/fe3c11717564047c741679/m/1/94659785-e8a1-4f27-8367-61d61888752a.png"
+                                        alt="">
+                                </td>
+
+                                <td width="300" valign="middle" class="blocking" align="center">
+                                    <table role="presentation" cellpadding="0" cellspacing="0" border="0">
+                                        <tr>
+                                            <td align="center" valign="middle" style="text-align: center;">
+                                                <img width="259" style=" margin: 0; max-width: 259px;" class="block"
+                                                    src="https://image.e.iqos.com/lib/fe3c11717564047c741679/m/1/b5e50604-9133-4bec-b8b0-bb01c7ac0aaf.png">
+                                                <p style="margin: 0 auto; font-size: 16px; padding-top: 5px;"
+                                                    class="txt-center fs15">LIMITED
+                                                    EDITION NEON
+                                                    PURPLE</p>
+                                            </td>
+                                        </tr>
+                                        <td height="44" class="hidden"></td>
+                                        <tr>
+                                            <td align="center" valign="top" style="text-align: center; direction: ltr;">
+                                                <h1 style="margin: 0 auto; font-size: 60px; font-weight: 700; color:#C21186; text-align: center; font-family: Arial, Helvetica, sans-serif;"
+                                                    class="fs45">200<sup style="font-size: 25px;">SAR*</sup>
+                                                </h1>
+                                            </td>
+                                        <tr>
+                                            <td height="20" align="center" valign="middle"></td>
+                                        </tr>
+                                        <td align="center" valign="top" style="text-align: center;">
+                                            <a href="#"><span
+                                                    style="background-color: #35303e; color: white; padding: 10px 20px; border-radius: 25px; display: inline-block; font-size: 15px; font-weight: 700; min-width: 110px; border: 1px solid #35303e;">Buy
+                                                    now</span></a>
+                                        </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+        </td>
+    </tr>
+
+
+
+
+
+
+    </table>
+    </td>
+    </tr>
+
+    <tr>
+        <td height="50"></td>
+    </tr>
+
+    <tr>
+        <td align="center" valign="top">
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" width="100%">
+                <tr>
+                    <td align="center" valign="top">
+                        <p class="fs11" style="margin: 0; font-size: 15px;"> *Recommended retail selling price</p>
+                <tr>
+                    <td align="center" valign="top">
+                        <h1 style="font-size: 20px; color: black; margin: 0; padding: 30px 30px 5px;">We’re by your side
+                            as you</h1>
+                        <h1 style="font-size: 20px; color: black; margin: 0; padding: 0px 30px 20px; color: #c21186 ;">
+                            move forward in
+                            your
+                            <br>
+                            journey
+                        </h1>
+                <tr>
+
+                    <td class="paddingleft0 paddingright0 p-l-r" align="center" style="padding: 0 82px 0;">
+                        <p style="margin: 0; font-size: 15px;  line-height: 24px;" class="p-l-r">
+                            Visit the IQOS Store at the Riyadh boulevard, or any of
+                            the IQOS Partners
+                            across the kingdom
+                            for an immersive experience to be amongst the first to discover the latest IQOS ILUMA
+                            Limited Edition NEON PURPLE and buy it.
+                        </p>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" style="padding-top: 20px; color: #6E07B8; font-weight: 700; font-size: 12px;">
+                        <a href="#">→ Get directions</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" valign="top" valign="top">
+                        <p
+                            style="margin: 0; padding-top: 10px; font-size: 15px; text-decoration: underline; color: #34303d; font-weight: 700;">
+                            Or for more information visit <a href="#" style="color: #c21186;">iqos.com</a></p>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center" valign="top">
+                        <h1 style="direction: ltr; margin: 0; padding: 30px 30px 20px; font-size: 25px;">Why purchase
+                            on<span style="color: #c21186;"> iqos.com?</span></h1>
+                    </td>
+                </tr>
+        </td>
+    </tr>
+    </td>
+    </tr>
+    </table>
+    </td>
+    </tr>
+
+
+    <tr>
+        <td align="center" valign="top" style="direction: ltr;">
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" width="100%">
+                <tr>
+                    <td width="40"></td>
+                    <td align="center" width="130" class="block">
+                        <img width="80" style="margin: 0 auto; display: block;"
+                            src="https://image.e.iqos.com/lib/fe3c11717564047c741679/m/1/efb50d5b-d2d2-4d46-a176-ca3d0c54f1a5.png">
+                        <h1 style="font-size: 20px; margin: 0;">Free express</h1>
+                        <h1 style="font-size: 20px; margin: 0;">delivery <sup>2</sup></h1>
+                    </td>
+                    <td width="23" class="block height30"></td>
+
+                    <td align="center" width="200" class="block">
+                        <img width="80" style="margin: 0 auto; display: block;"
+                            src="https://image.e.iqos.com/lib/fe3c11717564047c741679/m/1/7b83c5bc-a997-4c5a-80e4-31d1e335aa17.png">
+                        <h1 style="font-size: 20px; margin: 0;">Quick and secure</h1>
+                        <h1 style="font-size: 20px; margin: 0;">payment</h1>
+                    </td>
+                    <td width="23" class="block height30"></td>
+
+                    <td align="center" class="block">
+                        <img width="150" style="margin: 0 auto; display: block;"
+                            src="https://image.e.iqos.com/lib/fe3c11717564047c741679/m/1/70cd275f-3609-4c97-8e01-9d86d8cf1cd9.png">
+                        <h1 style="font-size: 20px; margin: 0;">Up to </h1>
+                        <h1 style="font-size: 20px; margin: 0;">6 interest-free</h1>
+                        <h1 style="font-size: 20px; margin: 0;"> payments 3 </h1>
+                    </td>
+                    <td width="34"></td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td align="center" valign-="top">
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" width="100%">
+                <tr>
+                    <td class="txt-center" align="left" style="padding: 30px 0 0 40px;">
+                        <p style="margin: 0; font-size: 12px;"><sup>2</sup>Free delivery on orders of SAR 150 or more
+                        </p>
+                        <p style="margin: 0; font-size: 12px;"><sup>3</sup>Tabby terms and conditions apply</p>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td height="30"></td>
+    </tr>
+    <tr>
+        <td align="center" valign-="top">
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" width="100%">
+                <tr>
+                    <td width="35" align="center"></td>
+
+                    <td align="center" valign-="top">
+                        <p style="margin: 0; font-size: 11px; text-align: center; line-height: 17px;">
+                            IQOS ILUMA is designed to be used only with TEREA sticks. Do not use TEREA sticks with IQOS
+                            devices of
+                            previous generations, as this may cause damage to your device.</p>
+                        <p
+                            style="margin: 0; font-size: 11px; text-align: center; line-height: 18px; padding-top: 20px;">
+                            Do not ingest or disassemble TEREA sticks. This product contains a sharp metal part that can
+                            cause serious injury if swallowed. Keep out of reach of children. Visit important
+                            information on iqos.com</p>
+                    </td>
+                    <td width="35" align="center"></td>
+
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td height="30"></td>
+    </tr>
+
+    <tr>
+        <td align="center" valign-="top">
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" width="100%">
+                <tr>
+                    <td align="center">
+                        <p style="margin: 0; font-size: 12px; padding: 0 30px;">.TOGETHER. FORWARD</p>
+                        <p style="margin: 0; font-size: 22px; padding: 2px 30px 30px;">IQOS Team</p>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+
+
+
+
+
+    </table>
+    </td>
+    </tr>
+
+    <tr>
+        <td align="center" valign-="top">
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" width="100%">
+
+
+                <tr>
+                    <td align="left" style="background-color: #34303d;">
+                        <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center"
+                            width="100%">
+                            <tr>
+                                <td height="30" align="left" valign="top"></td>
+                            </tr>
+                            <tr>
+                                <td width="50" align="center"></td>
+                                <td align="center" width="100">
+                                    <a href="#" style="font-size: 13px; font-weight: 700; color: white;"
+                                        class="footnote-12">Shop
+                                        online</a>
+                                </td>
+                                <td width="50" align="center"></td>
+                                <td align="center" width="100">
+                                    <a href="#" style="font-size: 13px; font-weight: 700; color: white;"
+                                        class="footnote-12">Store
+                                        finder
+                                    </a>
+                                </td>
+                                <td width="50" align="center"></td>
+                                <td align="center" width="100">
+                                    <a href="#" style="font-size: 13px; font-weight: 700; color: white;"
+                                        class="footnote-12">Get
+                                        support</a>
+                                </td>
+                                <td width="50" align="center"></td>
+                                <td align="center" width="50">
+                                    <a href="#" style="font-size: 13px; font-weight: 700; color: white;"
+                                        class="footnote-12">Faqs</a>
+                                </td>
+                                <td width="50" align="center"></td>
+
+
+                            </tr>
+
+                        </table>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td align="left" style="background-color: #34303d;">
+                        <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center"
+                            width="100%">
+                            <tr>
+                                <td>
+                            <tr>
+                                <td height="30"> </td>
+                            </tr>
+                            <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center"
+                                width="100%">
+                                <tr>
+                                    <td width="20"></td>
+                                    <td align="left">
+                                        <img width="140" style="display:block; min-width: 140px;"
+                                            src="https://image.e.iqos.com/lib/fe3c11717564047c741679/m/1/8212c28c-ffc5-4dd0-8b97-6b919f49874a.png">
+                                    </td>
+                                    <td width="260"></td>
+                                    <td align="left">
+                                        <img width="25" style=" display:block; min-width: 25px"
+                                            src="https://image.e.iqos.com/lib/fe3c11717564047c741679/m/1/8e05eaf6-e79e-4d21-8f5d-5bea464c3875.png">
+                                    </td>
+                                    <td width="20"></td>
+                                    <td align="left">
+                                        <img width="25" style="display:block; min-width: 25px"
+                                            src="https://image.e.iqos.com/lib/fe3c11717564047c741679/m/1/06b1edbd-5c41-4e9a-8bfc-eeb23bdad26e.png">
+                                    </td>
+                                    <td width="20"></td>
+                                    <td align="left">
+                                        <img width="25" style=" display:block; min-width: 25px"
+                                            src="https://image.e.iqos.com/lib/fe3f157075640675751071/m/1/6e925d9a-7ab6-4349-8686-b47d288b7215.png">
+                                    </td>
+                                    <td width="20"></td>
+                                    <td align="left">
+                                        <img width="25" style=" display:block; min-width: 25px"
+                                            src="https://image.e.iqos.com/lib/fe3c11717564047c741679/m/1/683616c8-fd8e-4c65-8828-245375a62073.png">
+                                    </td>
+                                    <td width="20"></td>
+
+                                </tr>
+                                <tr>
+                                    <td height="30"></td>
+                                </tr>
+                            </table>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    </table>
+    </td>
+    </tr>
+
+    <tr>
+        <td align="center">
+            <table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" width="100%">
+                <tr>
+                    <td align="center" class="p-l-r">
+                        <p
+                            style="margin: 0; text-decoration: underline; padding: 20px 0 20px; font-size: 13px; color: #2d2a35; line-height: 17px;">
+                            <a href="#">Terms and Conditions | Privacy Policy</a>
+                        </p>
+                        <p style="margin: 0;  font-size: 13px; font-weight: bold; color: black;">This product is not
+                            risk free and provides nicotine, which is addictive. Only for use by
+                            adults.
+                        </p>
+                        <p style="margin: 0;  font-size: 13px; color: black; padding-top: 20px;">If you
+                            would prefer not
+                            to receive emails
+                            from us, please <a href="#" style="text-decoration: underline;">unsubscribe.</a>
+                        </p>
+                        <p style="margin: 0;  font-size: 13px; padding-top: 20px;">© %%=Format(Now(), "yyyy")=%% Phillip
+                            Morris International. All rights reserved.</p>
+                        <p style="margin: 0;  font-size: 13px; padding-top: 20px;">
+                            Please do not forward this email as it is intended solely for you as an adult consumer of
+                            tobacco products aged 18+. You have received this email because you have agreed to receive
+                            tobacco related communications. To find out more about how we use information about you and
+                            your rights in relation to that, see our privacy notice. If you do not wish to receive
+                            further communication please unsubscribe. You can also update your details in Your Account
+                            section on <br>
+                            <a href="#" style="color: #00d1d2; text-decoration: underline;">www.iqos.com.</a>
+                        </p>
+                <tr>
+                    <td height="20"></td>
+                </tr>
+        </td>
+    </tr>
+    </table>
+    </td>
+    </tr>
+
+
+
+
+    </table>
+    </td>
+    </tr>
+    </table>
+
+
+</body>
+
+</html>
